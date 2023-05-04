@@ -10,17 +10,17 @@ export default function Main() {
   },[])
 
   const fetchData = async () => {
-    await fetch('https://dummyjson.com/products')
-                          .then(res => res.json()
-                          .then(data => setProducts(data.products)))
-    console.log(allProducts)
+    const response = await fetch('https://dummyjson.com/products')
+          const data = await response.json()
+    setProducts(data.products)
   }
 
+
     return (      
-    <div className="flex items-center justify-between">
+    <div className="flex flex-wrap px-30">
       {allProducts?.map(product => (
         <Card
-        id={product.id} 
+        key={product.id} 
         title={product.title}
         description={product.description}
         img={product.thumbnail}
