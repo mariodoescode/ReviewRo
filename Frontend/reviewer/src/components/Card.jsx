@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
+
 
 export default function Card(props) {
-  
+
 
     return (
-      <div className="max-w-sm   max-h-50 rounded overflow-hidden shadow-lg p-8">
-        <img className="w-full" src={props.img} alt="Sunset in the mountains" />
+      <div className="max-w-sm max-h-45 rounded overflow-hidden shadow-lg p-8">
+        <img className="w-fit" src={props.img} alt="Sunset in the mountains" />
           <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
+            <div className="font-bold text-xl mb-2">{props.title}</div>
               <p className="text-gray-700 text-base">
-                {props.title}
                 {props.description}
                 {props.price}
               </p>
