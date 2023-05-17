@@ -2,11 +2,8 @@ import Logo from "./Logo.png"
 
 export default function Header () {
     return (
-        <header className="header sticky top-0 bg-white shadow-md flex items-center justify-between px-8 py-02">
-    <img className='w-3/12' src={Logo} />
-
-
-
+        <header className="header sticky top-0 bg-white shadow-md flex items-center justify-between px-8 py-02 fixed top-0 left-0 w-full bg-white z-10">
+    <p><a href="/"><img className='w-3/12' src={Logo}/></a></p>
 
     <nav className="nav font-semibold text-lg">
 

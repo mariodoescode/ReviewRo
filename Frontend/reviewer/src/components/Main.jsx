@@ -33,7 +33,7 @@ export default function Main() {
 
     return (
       <body>
-        <div className="flex p-10 m-auto float-left flex-wrap w-20 max-h-full">
+        <div className="flex p-10 m-auto float-left flex-wrap w-20 max-h-full absolute">
           {allCategories?.map(category => (
             <Category
                     key={category.id}
