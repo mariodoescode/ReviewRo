@@ -37,9 +37,10 @@ export default function Main() {
   // }
 
   const toTopButton = document.getElementById("to-top-button");
+  var rootElement = document.documentElement;
 
   window.onscroll = function () {
-      if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 300) {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
           toTopButton.classList.remove("hidden");
       } else {
           toTopButton.classList.add("hidden");
@@ -47,10 +48,9 @@ export default function Main() {
   }
 
   function goToTop() {
-    window.scroll({
-      top: 100,
-      left: 100,
-      behavior: "smooth",
+    rootElement.scrollTo({
+      top: 0,
+      behavior: "smooth"
     });
   }
 
