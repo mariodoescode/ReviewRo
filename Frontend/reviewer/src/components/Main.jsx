@@ -30,6 +30,30 @@ export default function Main() {
     setProducts(data1.products)
   }
 
+  // const fetchData = async () => {
+  //   const response1 = await fetch('http://localhost:8080/products')
+  //         const data1 = await response1.json()
+  //   setProducts(data1)
+  // }
+
+  const toTopButton = document.getElementById("to-top-button");
+
+  window.onscroll = function () {
+      if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 300) {
+          toTopButton.classList.remove("hidden");
+      } else {
+          toTopButton.classList.add("hidden");
+      }
+  }
+
+  function goToTop() {
+    window.scroll({
+      top: 100,
+      left: 100,
+      behavior: "smooth",
+    });
+  }
+
 
     return (
       <body>
@@ -52,6 +76,8 @@ export default function Main() {
               />
             ))}
       </div>
+      <button id="to-top-button" onClick={goToTop} title="Go To Top"
+        class="hidden fixed z-90 bottom-8 right-8 border-0 w-16 h-16 rounded-full drop-shadow-md bg-indigo-500 text-white text-3xl font-bold">&uarr;</button>
       </body>      
     
     )
