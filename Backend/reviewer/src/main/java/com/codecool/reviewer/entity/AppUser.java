@@ -1,4 +1,4 @@
-package com.codecool.reviewer.model;
+package com.codecool.reviewer.entity;
 
 
 import jakarta.persistence.*;
@@ -12,13 +12,19 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "\"User\"")
-public class User {
+@Table(name = "users")
+public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String email;
     private String password;
-    private String name;
+    private String username;
+    private String authorities;
 
+    public AppUser(String a, String p, String user) {
+        this.username = a;
+        this.password = p;
+        this.authorities = user;
+    }
 }
