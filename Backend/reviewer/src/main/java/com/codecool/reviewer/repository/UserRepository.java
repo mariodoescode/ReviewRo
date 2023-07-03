@@ -1,7 +1,14 @@
 package com.codecool.reviewer.repository;
 
-import com.codecool.reviewer.model.User;
+import com.codecool.reviewer.entity.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<AppUser, Long> {
+    Optional<AppUser> findOneByEmailAndPassword(String email, String password);
+
+    AppUser findByEmail(String email);
+
+    Optional<AppUser> findByUsername(String username);
 }
