@@ -1,11 +1,10 @@
 package com.codecool.reviewer.controller;
 
 
-import com.codecool.reviewer.model.Product;
+import com.codecool.reviewer.entity.Product;
 import com.codecool.reviewer.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,5 +23,6 @@ public class ProductController {
     public List<Product> getProducts() {
         return productService.getProducts();
     }
+
 
 }
