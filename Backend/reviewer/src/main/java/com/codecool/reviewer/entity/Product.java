@@ -1,4 +1,4 @@
-package com.codecool.reviewer.model;
+package com.codecool.reviewer.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "product")
+@Table(name = "products")
 public class Product {
 
     @Id
