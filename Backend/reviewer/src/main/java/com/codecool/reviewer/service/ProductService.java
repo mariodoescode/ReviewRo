@@ -1,7 +1,7 @@
 package com.codecool.reviewer.service;
 
 
-import com.codecool.reviewer.model.Product;
+import com.codecool.reviewer.entity.Product;
 import com.codecool.reviewer.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
