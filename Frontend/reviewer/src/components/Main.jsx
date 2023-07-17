@@ -14,7 +14,6 @@ export default function Main() {
   const fetchCategories = async () => {
     const response = await fetch('https://dummyjson.com/products/categories')
           const data = await response.json()
-          console.log(data)
     setCategories(data)
   }
 
@@ -26,7 +25,6 @@ export default function Main() {
   const fetchData = async () => {
     const response1 = await fetch('https://dummyjson.com/products')
           const data1 = await response1.json()
-          console.log(data1.products)
     setProducts(data1.products)
   }
 
