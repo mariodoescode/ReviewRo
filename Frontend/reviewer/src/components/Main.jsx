@@ -14,26 +14,26 @@ export default function Main() {
   const fetchCategories = async () => {
     const response = await fetch('https://dummyjson.com/products/categories')
           const data = await response.json()
-          console.log(data)
     setCategories(data)
   }
 
 
   React.useEffect(() => {
     fetchData()
+    // fetchData1()
   },[])
 
   const fetchData = async () => {
     const response1 = await fetch('https://dummyjson.com/products')
           const data1 = await response1.json()
-          console.log(data1.products)
     setProducts(data1.products)
   }
 
-  // const fetchData = async () => {
-  //   const response1 = await fetch('http://localhost:8080/products')
+  // const fetchData1 = async () => {
+  //   const response1 = await fetch('http://localhost:8080/api/products')
   //         const data1 = await response1.json()
   //   setProducts(data1)
+  //   console.log(data1)
   // }
 
   const toTopButton = document.getElementById("to-top-button");
@@ -56,8 +56,8 @@ export default function Main() {
 
 
     return (
-      <body>
-        <div className="flex p-10 m-auto float-left flex-wrap w-20 max-h-full absolute">
+      <div className='h-full'>
+        <div className="flex p-10 m-auto float-left flex-wrap w-20 max-h-full">
           {allCategories?.map(category => (
             <Category
                     key={category.id}
@@ -65,11 +65,12 @@ export default function Main() {
             />
           ) )}
           </div>
-        <div></div>
-        <div className="flex flex-wrap m-auto pl-60">
+        {/* <div></div> */}
+        <div className="flex flex-wrap m-auto pl-40">
           {allProducts?.slice(0,20).map(product => (
               <Card
                     key={product.id} 
+                    id={product.id}
                     title={product.title}
                     description={product.description}
                     img={product.thumbnail}
@@ -77,8 +78,8 @@ export default function Main() {
             ))}
       </div>
       <button id="to-top-button" onClick={goToTop} title="Go To Top"
-        class="hidden fixed z-90 bottom-8 right-8 border-0 w-16 h-16 rounded-full drop-shadow-md bg-indigo-500 text-white text-3xl font-bold">&uarr;</button>
-      </body>      
+        className="hidden fixed z-90 bottom-8 right-8 border-0 w-16 h-16 rounded-full drop-shadow-md bg-indigo-500 text-white text-3xl font-bold">&uarr;</button>
+      </div>   
     
     )
 }
