@@ -1,10 +1,11 @@
 package com.codecool.reviewer.service;
 
-import com.codecool.reviewer.dto.ReviewDTO;
 import com.codecool.reviewer.entity.Review;
 import com.codecool.reviewer.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ReviewService {
@@ -17,13 +18,12 @@ public class ReviewService {
         this.reviewRepository = reviewRepository;
     }
 
-    public void addReview(ReviewDTO reviewDTO) {
-        reviewRepository.save(new Review(
-                reviewDTO.getId(),
-                reviewDTO.getMessage(),
-                reviewDTO.getRating(),
-                reviewDTO.getProduct(),
-                reviewDTO.getAppUser()
-        ));
+
+    public void addReview(Review review) {
+        reviewRepository.save(review);
+    }
+
+    public List<Review> findReviewsByProductId(String productId) {
+        return reviewRepository.findAllByProductId(Long.valueOf(productId));
     }
 }
