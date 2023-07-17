@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -20,11 +22,23 @@ public class AppUser {
     private String email;
     private String password;
     private String username;
+    private boolean isPremium;
     private String authorities;
 
-    public AppUser(String a, String p, String user) {
-        this.username = a;
-        this.password = p;
-        this.authorities = user;
+    public AppUser(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.isPremium = false;
+    }
+
+
+
+    public void setRoles(String roles) {
+        this.authorities = roles;
+    }
+
+    public void toggleIsPremium() {
+        isPremium = !isPremium;
     }
 }
