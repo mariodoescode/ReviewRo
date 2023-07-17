@@ -42,11 +42,17 @@ public class SecurityConfig {
         this.jpaUserDetailsService = jpaUserDetailsService;
     }
 
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                .authorizeHttpRequests(auth ->
+                        auth.requestMatchers("/api/auth/signup").permitAll()
+                                .requestMatchers("/api/products").permitAll()
+                                .requestMatchers("/api/**").permitAll()
+                                .anyRequest().authenticated()
+                )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .userDetailsService(jpaUserDetailsService)
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
@@ -61,8 +67,9 @@ public class SecurityConfig {
     @Order(1)
     SecurityFilterChain tokenSecurityFilterChain(HttpSecurity http) throws Exception {
         return http
+                .cors().and()
                 .csrf(AbstractHttpConfigurer::disable)
-                .securityMatcher(new AntPathRequestMatcher("/token"))
+                .securityMatcher(new AntPathRequestMatcher("/api/auth/token"))
                 .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .userDetailsService(jpaUserDetailsService)
