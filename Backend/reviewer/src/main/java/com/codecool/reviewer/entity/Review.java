@@ -26,4 +26,10 @@ public class Review {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private AppUser appUser;
 
+    public Review(String message, float rating, Product product, AppUser appUser) {
+        this.message = message;
+        this.rating = rating;
+        this.product = product;
+        this.appUser = appUser;
+    }
 }
