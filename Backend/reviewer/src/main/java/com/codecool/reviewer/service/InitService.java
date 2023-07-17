@@ -26,7 +26,6 @@ public class InitService {
 
     public void seedDatabase() {
 
-
     }
 
 
