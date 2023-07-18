@@ -128,11 +128,6 @@ export default function AccountPage(props) {
                             </svg>
                         </a>
                     </div>
-
-
-                    <h2 className="text-xl font-bold mt-6 mb-4">Experience</h2>
-                    <div className="mb-6">
-                    </div>
                 </div>
             </div>
         </div>

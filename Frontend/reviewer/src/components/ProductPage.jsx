@@ -9,6 +9,7 @@ export default function Product() {
 
     React.useEffect(() => {
         fetchData()
+        console.log(location.state)
     },[])
 
     async function fetchData(url = "") {
@@ -38,7 +39,6 @@ export default function Product() {
         <div>
             <div className="product-card">
                 <div>
-                    {}
                 </div>
             </div>
         </div>
