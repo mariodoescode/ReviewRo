@@ -3,7 +3,7 @@ import teamlogo from './teamlogo.png'
 
 export default function About() {
   return (
-      <div className="col-span-4 sm:col-span-9 flex justify-center items-center">
+      <div className="col-span-4 sm:col-span-9 flex justify-center items-center h-[34rem]">
         <div className="bg-white shadow rounded-lg p-6 text-center">
           <h2 className="text-3xl font-bold mb-4">About Us</h2>
           <p className="text-gray-700">
