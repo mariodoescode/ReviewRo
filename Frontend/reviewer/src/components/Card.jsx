@@ -75,7 +75,7 @@ export default function Card(props) {
             <span className="card-rating">5.0</span>
           </div>
         </div>
-        <a  className="card-review-button" >
+        
         <Link
              to="product"
              state={{
@@ -88,8 +88,7 @@ export default function Card(props) {
             }}
           >
             Reviews
-          </Link>
-        </a>    
+        </Link>
         </div>
       </div>
     </div>
