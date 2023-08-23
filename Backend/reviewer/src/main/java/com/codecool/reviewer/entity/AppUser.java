@@ -24,12 +24,14 @@ public class AppUser {
     private String username;
     private boolean isPremium;
     private String authorities;
+    private String description;
 
     public AppUser(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.isPremium = false;
+        this.description = "";
     }
 
 
