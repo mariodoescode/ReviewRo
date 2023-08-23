@@ -36,7 +36,7 @@ Follow these steps to set up and run ReviewRo on your local machine. The instruc
 Explore the different sections of ReviewRo:
 
 - **Main Page**: The platform's primary page where users can browse products and reviews.
-![MainPage](https://github.com/mariodoescode/ReviewRo/assets/106011177/9c0cdbb8-2cc3-4a86-a4e9-fb0ed8d6463f)
+![MainPage](https://github.com/mariodoescode/ReviewRo/assets/106011177/d84e83fa-3e43-4067-b96b-572e1f7e348e)
 
 - **Register Page**: The page for user registration.
 ![RegisterPage](https://github.com/mariodoescode/Codecool-Shop/assets/106011177/5fe78736-9065-41e6-b0ba-4f82609b071c)
