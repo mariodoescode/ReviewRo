@@ -43,7 +43,7 @@ public class AuthController {
 
 
     @PostMapping("/signup")
-    public ResponseEntity<?> registerUser(@Validated @RequestBody SignUpRequest signupRequest) throws IOException {
+    public ResponseEntity<?> registerUser(@Validated @RequestBody SignUpRequest signupRequest) {
         if (userRepository.existsByUsername(signupRequest.getUsername())) {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: Username already taken"));
         }
@@ -56,8 +56,7 @@ public class AuthController {
         userRepository.save(appUser);
         Long id = userRepository.findByUsername(signupRequest.getUsername()).get().getId();
         storageService.addPlaceholderImage(id);
-//        emailService.sendSimpleEmail(signupRequest.getEmail(), "Reviewer registration",
-//                "Your account has been created succesfuly");
+
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
