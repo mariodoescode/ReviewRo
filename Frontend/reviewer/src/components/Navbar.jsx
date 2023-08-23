@@ -1,4 +1,4 @@
-import Logo from "./Logo.png"
+import Logo from "../assets/Logo.png"
 import Cookies from "universal-cookie"
 import {  useState } from "react";
 import jwtDecode from "jwt-decode";
@@ -12,14 +12,11 @@ export default function Header () {
 
 
     React.useEffect(() => {
-      console.log("i am in useeffect")
       if(cookies.get("jwt_authorization")) {
         const jwt_token = cookies.get("jwt_authorization")
         const decoded = jwtDecode(jwt_token);
         const token = JSON.parse(JSON.stringify(decoded))
-        console.log("user in navbar " + token.sub)
         setUser(token.sub)
-        console.log("user " + user)
       }
     },[])
 
@@ -28,6 +25,8 @@ export default function Header () {
       cookies.remove("jwt_authorization")
       navigate("/login")
     }
+
+  
 
 
     return (
@@ -42,23 +41,23 @@ export default function Header () {
               <div className="container mx-auto flex items-center justify-between text-gray-900">
                 <ul className="hidden items-center gap-6 lg:flex">
                 {user != undefined ? (<></>) : 
-                  (<li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer hover:font-serif">
+                  (<li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 hover:font-serif">
                     <a className="flex items-center" href="/register">
                       Register
                     </a>
                   </li>)}
-                 {user != undefined ? ( <li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer hover:font-serif">
+                 {user != undefined ? ( <li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 hover:font-serif">
                     <a className="flex items-center" href="/profile">
                       Profile
                     </a>
                   </li>): <></>}
-                  {user != undefined ? ( <li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer hover:font-serif">
+                  {user != undefined ? ( <li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 hover:font-serif">
                     <a className="flex items-center" onClick={logout}>
                       Logout
                     </a>
                   </li>) : 
-                  (<li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer hover:font-serif">
-                    <a className="flex items-center" href="/login">
+                  (<li className="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 hover:font-serif" >
+                    <a className="flex cursor-pointer items-center" href="/login">
                       Login
                     </a>
                   </li>)}
@@ -130,7 +129,7 @@ export default function Header () {
               </div>
               <input type="text" id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for a product..." required />
           </div>
-          <button type="submit" className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          <button type="submit"  className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
               <span className="sr-only">Search</span>
           </button>
