@@ -1,13 +1,10 @@
 package com.codecool.reviewer.controller;
 
 import com.codecool.reviewer.entity.AppUser;
-import com.codecool.reviewer.entity.Review;
 import com.codecool.reviewer.payload.response.MessageResponse;
 import com.codecool.reviewer.payload.response.UserData;
 import com.codecool.reviewer.service.StorageService;
 import com.codecool.reviewer.service.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,16 +14,14 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.security.Principal;
+
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class UserController {
 
-    public static final Logger LOG = LoggerFactory.getLogger(AuthController.class);
 
     UserService userService;
     StorageService service;
@@ -46,7 +41,7 @@ public class UserController {
 
     @PreAuthorize("hasAuthority('SCOPE_admin')")
     @GetMapping("/users")
-    public List<AppUser> getAllUsers(Principal principal) {
+    public List<AppUser> getAllUsers() {
         return userService.getAllUsers();
     }
 
