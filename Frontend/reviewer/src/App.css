@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.card-container {
+    @apply relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-xl hover:font-bold hover:scale-105
+}
+
+.card-top {
+    @apply relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl h-full
+}
+
+.card-bottom-container {
+    @apply bottom-0 
+}
+
+.card-bottom {
+    @apply mt-4 px-5 pb-5 
+}
+
+.card-bottom-title {
+    @apply text-xl tracking-tight text-slate-900 font-serif
+}
+
+.card-bottom-description {
+    @apply mb-4 text-base font-light
+}
+
+.card-bottom-raiting {
+    @apply mt-2 mb-5 flex items-center justify-between
+}
+
+.card-bottom-stars-container {
+    @apply flex items-center
+}
+
+
+.card-rating {
+    @apply mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold
+}
+
+.card-review-button {
+    @apply flex items-center bottom-0 justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-light text-white hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-blue-300 hover:font-bold
+}
+
+.register-page-container {
+    @apply flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0
+}
+
+.register-page {
+    @apply bg-gray-50 dark:bg-gray-900
+}
+
+.logo {
+    @apply flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white
+}
+
+.logo-image {
+    @apply w-8 h-8 mr-2
+}
+
+.register-card {
+    @apply 
+        w-full bg-white 
+        rounded-lg shadow 
+        dark:border md:mt-0 
+        sm:max-w-md xl:p-0 
+        dark:bg-gray-800 
+        dark:border-gray-700
+}
+
+.register-card-inner {
+    @apply p-6 space-y-4 md:space-y-6 sm:p-8
+}
+
+.register-card-title {
+    @apply 
+        text-xl font-bold 
+        leading-tight tracking-tight 
+        text-gray-900 md:text-2xl 
+        dark:text-white
+}
+
+.register-form-container {
+    @apply space-y-4 md:space-y-6
+}
+
+.register-label {
+    @apply 
+        block mb-2 
+        text-sm font-medium 
+        text-gray-900 
+        dark:text-white
+}
+
+
+.register-input {
+    @apply 
+        bg-gray-50 border 
+        border-gray-300 
+        text-gray-900 
+        sm:text-sm rounded-lg  
+        block w-full p-2.5 
+        dark:bg-gray-700 
+        dark:border-gray-600 
+        dark:placeholder-gray-400 
+        dark:text-white 
+        dark:focus:ring-blue-500 
+        dark:focus:border-blue-500    
+}
+
+
+.register-conditions {
+    @apply flex items-start
+}
+
+.product-card {
+    @apply flex
+}
+
+.modal {
+    @apply 
+        font-sans 
+        fixed min-w-fit 
+        z-50
+        left-1/4 
+        top-1/4 
+        bg-white 
+        border-solid border-black 
+        shadow-lg
+        border
+        rounded-xl
+        max-w-5xl
+        w-2/4
+        items-center
+}
+
+.backdrop {
+    @apply 
+        fixed 
+        z-auto 
+        top-0 
+        bottom-0 
+        left-0 
+        right-0 
+        bg-white 
+        opacity-50
+}
+
+.modal-title {
+    @apply font-medium text-xl
+}
+
+.modal-header {
+    @apply border-b-2 flex
+}
+
+.modal-desc,
+.modal-header,
+.modal-footer {
+    @apply p-10 justify-center
+}
+
+.close-button {
+    @apply 
+        text-2xl 
+        font-bold
+        top-0.5
+        absolute
+        right-0
+        leading-none
+        text-black border-none 
+        opacity-70 
+        cursor-pointer
+        bg-slate-600
+        rounded-lg
+}
+
+.button {
+    @apply 
+        cursor-pointer
+        text-base
+        pt-3 pb-3
+        pl-4 pr-4
+        rounded-md
+        border-none
+}
+
+.modal-footer {
+    @apply 
+        border-t
+        flex
+        justify-end
+        gap-2
+}
+
+
+
+.secondary-button,
+.primary-button {
+    @apply text-white bg-blue-600 rounded-xl font-sans
+}
+
+.modal-example {
+    @apply 
+        flex justify-center items-center
+        flex-row 
+}
+
+
+.modal-desc {
+    @apply flex-row min-h-fit flex-wrap
+}
+
+.changeImage {
+    @apply cursor-pointer bg-slate-700 absolute
+}
+
+.modal-profile-picture {
+    @apply w-20 h-20 flex items-center justify-center rounded-full  mb-7
+}
+
+.modal-profile-picture-overlay {
+    @apply w-20 h-20 absolute items-center opacity-70 bg-slate-400 justify-center rounded-full  mb-7
+}
